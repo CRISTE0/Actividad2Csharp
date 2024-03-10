@@ -1,0 +1,108 @@
+namespace consola;
+class Program
+{
+    public static void Main(string[] args)
+    {
+
+        string desicion = null;
+        int pesoCarta;
+        int tipoEnvio;
+        int tipoDestino;
+        int subtotal = 0;
+        double Iva=0;
+        double total=0;
+        double totalGanancias = 0;
+        int contadorCorriente = 0;
+        int contadorRecomendado = 0;
+
+
+
+        do
+        {
+
+            Console.WriteLine($"¿Cuánto pesa la carta (gramos)?");
+            pesoCarta = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"¿Cuál es el tipo de envio?");
+            Console.WriteLine($"1. Corriente \n2. Recomendado");
+            tipoEnvio = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"¿Cuál es el destino?");
+            Console.WriteLine($"1. Local \n2. Nacional \n3. Internacional");
+            tipoDestino = int.Parse(Console.ReadLine());
+
+            if (tipoEnvio == 1)
+            {
+                contadorCorriente++;
+                if (tipoDestino == 1)
+                {
+                    subtotal = 100;
+                    Iva = 16.0 / subtotal * 100;
+                    total = subtotal + Iva;
+                    totalGanancias += total;
+                    Console.WriteLine($"El total a paga por el envío de la carta es: {total}");
+
+                }
+                else if (tipoDestino == 2)
+                {
+                    subtotal = 150;
+                    Iva = 16.0 / subtotal * 100;
+                    total = subtotal + Iva;
+                    totalGanancias += total;
+                    Console.WriteLine($"El total a paga por el envío de la carta es: {total}");
+
+                }
+                else if (tipoDestino == 3)
+                {
+                    subtotal = 200;
+                    Iva = 16.0 / subtotal * 100;
+                    total = subtotal + Iva;
+                    totalGanancias += total;
+                    Console.WriteLine($"El total a paga por el envío de la carta es: {total}");
+                }
+            }
+            else if (tipoEnvio == 2)
+            {
+                contadorRecomendado++;
+                if (tipoDestino == 1)
+                {
+                    subtotal = 200;
+                    Iva = 16.0 / subtotal * 100;
+                    total = subtotal + Iva;
+                    totalGanancias += total;
+                    Console.WriteLine($"El total a paga por el envío de la carta es: {total}");
+                }
+                else if (tipoDestino == 2)
+                {
+                    subtotal = 300;
+                    Iva = 16.0 / subtotal * 100;
+                    total = subtotal + Iva;
+                    totalGanancias += total;
+                    Console.WriteLine($"El total a paga por el envío de la carta es: {total}");
+
+                }
+                else if (tipoDestino == 3)
+                {
+                    subtotal = 400;
+                    Iva = 16.0 / subtotal * 100;
+                    total = subtotal + Iva;
+                    totalGanancias += total;
+                    Console.WriteLine($"El total a paga por el envío de la carta es: {total}");
+
+                }
+            }
+            Console.WriteLine($"¿Desea hacer otro envío?");
+            desicion = Console.ReadLine();
+            
+
+        } while (desicion == "si");
+        Console.WriteLine($"\t*********************************************");
+
+        Console.WriteLine($"\tResultados");
+        Console.WriteLine($"\tLa cantidad de envios corrientes fueron: {contadorCorriente}");
+        Console.WriteLine($"\tLa cantidad de envios recomendados fueron: {contadorRecomendado}");
+        Console.WriteLine($"\tEL total de dinero recogido fue: {totalGanancias}");
+        Console.WriteLine($"\t*********************************************");
+
+    }
+}

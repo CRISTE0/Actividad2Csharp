@@ -1,0 +1,74 @@
+namespace consola;
+class Program
+{
+    public static void Main(string[] args)
+    {
+
+
+        int acumuladorNino = 0;
+        int acumuladorJoven = 0;
+        int acumuladorAdulto = 0;
+        int acumuladorViejo = 0;
+        int cantidadPersonasEncuestar;
+        int ninosEncuestados = 0;
+        int jovenesEncuestados = 0;
+        int adultosEncuestados = 0;
+        int viejoscuestados = 0;
+
+
+        Console.WriteLine("Ingrese la cantidad de personas a encuestar:");
+        cantidadPersonasEncuestar = int.Parse(Console.ReadLine());
+        for (int i = 1; i <= cantidadPersonasEncuestar; i++)
+        {
+            Console.WriteLine($"Ingrese la edad de la persona {i}:");
+            int edad = int.Parse(Console.ReadLine());
+
+            if (edad > 0 && edad <= 12)
+            {
+                Console.WriteLine("Ingrese el peso del niño:");
+                int pesoNino = int.Parse(Console.ReadLine());
+                ninosEncuestados++;
+                acumuladorNino += pesoNino;
+            }
+            else if (edad > 13 && edad <= 29)
+            {
+                Console.WriteLine("Ingrese el peso del joven:");
+                int pesoJoven = int.Parse(Console.ReadLine());
+                jovenesEncuestados++;
+
+                acumuladorJoven += pesoJoven;
+            }
+            else if (edad > 30 && edad <= 59)
+            {
+                Console.WriteLine("Ingrese el peso del adulto:");
+                int pesoAdulto = int.Parse(Console.ReadLine());
+                adultosEncuestados++;
+                acumuladorAdulto += pesoAdulto;
+            }
+            else if (edad > 60)
+            {
+                Console.WriteLine("Ingrese el peso del viejo:");
+                int pesoViejo = int.Parse(Console.ReadLine());
+                viejoscuestados++;
+
+                acumuladorViejo += pesoViejo;
+            }
+            else
+            {
+                Console.WriteLine("Error: Edad no válida");
+                i--;
+            }
+        }
+
+        Console.WriteLine($"\t*****************************************");
+        Console.WriteLine("\tResultados:");
+        Console.WriteLine("\tPromedio de peso de niños: " + (
+        ninosEncuestados > 0 ? (acumuladorNino / ninosEncuestados) : 0
+        ));
+        Console.WriteLine("\tPromedio de peso de jóvenes: " + (jovenesEncuestados > 0 ? (acumuladorJoven / jovenesEncuestados) : 0));
+        Console.WriteLine("\tPromedio de peso de adultos: " + (adultosEncuestados > 0 ? (acumuladorAdulto / adultosEncuestados) : 0));
+        Console.WriteLine("\tPromedio de peso de viejos: " + (viejoscuestados > 0 ? (acumuladorViejo / viejoscuestados) : 0));
+        Console.WriteLine($"\t*****************************************");
+    }
+
+}

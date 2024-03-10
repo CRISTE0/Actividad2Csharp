@@ -1,0 +1,55 @@
+namespace consola;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int autos;
+        int placaAuto;
+        int terminacionPlaca;
+
+        int calcomaniaAmarilla = 0; ;
+        int calcomaniaRosa = 0; ;
+        int calcomaniaRoja = 0; ;
+        int calcomaniaVerde = 0; ;
+        int calcomaniaAzul = 0; ;
+
+        Console.WriteLine($"¿Cuantos autos entraron hoy al D.F?");
+        autos = int.Parse(Console.ReadLine());
+        for (int i = 1; i <= autos; i++)
+        {
+            Console.WriteLine($"Ingrese la placa del auto");
+            placaAuto = int.Parse(Console.ReadLine());
+            terminacionPlaca = placaAuto % 10;
+
+            if (terminacionPlaca == 1 || terminacionPlaca == 2)
+            {
+                calcomaniaAmarilla++;
+            }
+            else if (terminacionPlaca == 3 || terminacionPlaca == 4)
+            {
+                calcomaniaRosa++;
+            }
+            else if (terminacionPlaca == 5 || terminacionPlaca == 6)
+            {
+                calcomaniaRoja++;
+            }
+            else if (terminacionPlaca == 7 || terminacionPlaca == 8)
+            {
+                calcomaniaVerde++;
+            }
+            else if (terminacionPlaca == 9 || terminacionPlaca == 0)
+            {
+                calcomaniaAzul++;
+            }
+
+        }
+
+        Console.WriteLine($"\tLos autos que entraron con calcomania amarrilla fueron: {calcomaniaAmarilla}");
+        Console.WriteLine($"\tLos autos que entraron con calcomania rosa fueron: {calcomaniaRosa}");
+        Console.WriteLine($"\tLos autos que entraron con calcomania roja fueron: {calcomaniaRoja}");
+        Console.WriteLine($"\tLos autos que entraron con calcomania verde fueron: {calcomaniaVerde}");
+        Console.WriteLine($"\tLos autos que entraron con calcomania azul fueron: {calcomaniaAzul}");
+
+
+    }
+}

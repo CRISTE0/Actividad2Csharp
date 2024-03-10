@@ -1,0 +1,41 @@
+namespace consola;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        double gananciaTienda = 0;
+        double valorCompra = 0;
+        double descuentoNarajas = 0;
+        int valorKiloNaranja = 10;
+        double totalPagar = 0;
+        for (int i = 1; i <= 5; i++)
+        {
+            Console.WriteLine($"¿Cuantos kilos de naranja va a comprar el cliente {i}?");
+            double kilosCliente = double.Parse(Console.ReadLine());
+            valorCompra = kilosCliente * valorKiloNaranja;
+            Console.WriteLine($"{valorCompra}");
+            
+
+            if (kilosCliente > 10)
+            {
+                descuentoNarajas = valorCompra*15/100;
+                totalPagar = valorCompra-descuentoNarajas; 
+                gananciaTienda+=totalPagar;
+                Console.WriteLine($"El cliente {i} pagará {totalPagar}");
+            }
+            else
+            {
+                Console.WriteLine($"El cliente {i} pagará {valorCompra}");
+                gananciaTienda+=valorCompra;
+
+            }
+
+        }
+        Console.WriteLine($"\t*******************************************");
+        Console.WriteLine($"\tLa ganancia total de la tienda es: {gananciaTienda}");
+        Console.WriteLine($"\t*******************************************");
+        
+
+    }
+
+}

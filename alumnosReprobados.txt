@@ -1,0 +1,29 @@
+namespace consola;
+class Program
+{
+    public static void Main(string[] args)
+    {
+
+        int calificacion;
+        int alumnosReprobados = 0;
+        double porcentajeAlumnosReprobados;
+        for (int i = 1; i <= 5; i++)
+        {
+            Console.WriteLine($"Ingrese la calificación del alumno {i}");
+            calificacion = int.Parse(Console.ReadLine());
+            if (calificacion < 70)
+            {
+                alumnosReprobados++;
+            }
+        }
+
+        porcentajeAlumnosReprobados = alumnosReprobados/5.0*100;
+
+        Console.WriteLine($"\t /////////////////////////////////////////////////");
+
+        Console.WriteLine($"\tEl porcentaje de alumnos reprobados son: {porcentajeAlumnosReprobados}%");
+        Console.WriteLine($"\t /////////////////////////////////////////////////");
+        
+
+    }
+}

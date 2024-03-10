@@ -1,0 +1,78 @@
+namespace consola;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int votosCandidato1 = 0;
+        int votosCandidato2 = 0;
+        int votosCandidato3 = 0;
+        int totalVotos;
+        double porcentajeVotosCandidato1;
+        double porcentajeVotosCandidato2;
+        double porcentajeVotosCandidato3;
+        int ganador;
+        int votosGanador;
+
+        for (int i = 0; i <= 5; i++)
+        {
+            Console.WriteLine($"Para hacer valido su voto, Presione: \n1. votar por el candidato1. \n2. votar por el candidato2. \n3.votar por el candidato3");
+
+            int opcion = int.Parse(Console.ReadLine());
+
+            switch (opcion)
+            {
+                case 1:
+                    votosCandidato1++;
+                    break;
+                case 2:
+                    votosCandidato2++;
+                    break;
+                case 3:
+                    votosCandidato3++;
+                    break;
+                default:
+                    Console.WriteLine("Voto no contado");
+                    break;
+            }
+        }
+
+
+        totalVotos = votosCandidato1 + votosCandidato2 + votosCandidato3;
+        porcentajeVotosCandidato1 = (double)votosCandidato1 / totalVotos * 100;
+        porcentajeVotosCandidato2 = (double)votosCandidato2 / totalVotos * 100;
+        porcentajeVotosCandidato3 = (double)votosCandidato3 / totalVotos * 100;
+
+
+
+
+
+        if (votosCandidato1 > votosCandidato2 && votosCandidato1 > votosCandidato3)
+        {
+            ganador = 1;
+            votosGanador = votosCandidato1;
+        }
+        else if (votosCandidato2 > votosCandidato1 && votosCandidato2 > votosCandidato3)
+        {
+            ganador = 2;
+            votosGanador = votosCandidato2;
+
+        }else if (votosCandidato3 > votosCandidato1 && votosCandidato3 > votosCandidato2)
+        {
+            
+            ganador = 3;
+            votosGanador = votosCandidato3;
+        }
+        else
+        {
+        Console.WriteLine($"Empate no hubo ganador");
+	    
+        }
+
+        Console.WriteLine("Resultados:");
+        Console.WriteLine($"Votos para candidato 1:  {votosCandidato1} {porcentajeVotosCandidato1} %");
+        Console.WriteLine($"Votos para candidato 2: {votosCandidato2} {porcentajeVotosCandidato2} %");
+        Console.WriteLine($"Votos para candidato 3:  {votosCandidato3}  {porcentajeVotosCandidato3} %");
+        Console.WriteLine($"El ganador es el candidato: {ganador} con {votosGanador} votos.");
+
+    }
+}

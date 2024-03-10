@@ -1,0 +1,105 @@
+namespace consola;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int animalEstudiar;
+        int edadAnimal;
+        int edad1=0;
+        int edad2=0;
+        int edad3=0;
+        double porcentajeEdad1;
+        double porcentajeEdad2;
+        double porcentajeEdad3;
+
+
+        Console.WriteLine($"¿Que animal desea estudiar?");
+        Console.WriteLine($"1. Elefantes");
+        Console.WriteLine($"2. Jirafas");
+        Console.WriteLine($"3. Chimpancés");
+
+        animalEstudiar = int.Parse(Console.ReadLine());
+
+        switch (animalEstudiar)
+        {
+            case 1:
+            for (int i = 1; i <= 20; i++)
+            {
+                Console.WriteLine($"Ingrese la edad del elefante {i}");
+                edadAnimal = int.Parse(Console.ReadLine());
+
+                if (edadAnimal >0 && edadAnimal<2)
+                {
+                    edad1++;
+                }else if(edadAnimal>1 && edadAnimal<3){
+                    edad2++;
+                }
+                else if(edadAnimal>=3){
+                    edad3++;
+                }
+            }
+
+            porcentajeEdad1 = edad1/20.0*100;
+            porcentajeEdad2 = edad2/20.0*100;
+            porcentajeEdad3 = edad3/20.0*100;
+
+            Console.WriteLine($"\tEl porcentaje de elefantes con edad entre 0 y 1 es: {porcentajeEdad1}");
+            Console.WriteLine($"\tEl porcentaje de elefantes con edad entre 2 y 3 es: {porcentajeEdad2}");
+            Console.WriteLine($"\tEl porcentaje de elefantes con edad mayor a 3 es:{porcentajeEdad3}");
+                break;
+            case 2:
+            for (int i = 1; i <= 15; i++)
+            {
+                Console.WriteLine($"Ingrese la edad de la jirafa {i}");
+                edadAnimal = int.Parse(Console.ReadLine());
+
+                if (edadAnimal >0 && edadAnimal<2)
+                {
+                    edad1++;
+                }else if(edadAnimal>1 && edadAnimal<3){
+                    edad2++;
+                }
+                else if(edadAnimal>=3){
+                    edad3++;
+                }
+            }
+
+            porcentajeEdad1 = edad1/15.0*100;
+            porcentajeEdad2 = edad2/15.0*100;
+            porcentajeEdad3 = edad3/15.0*100;
+
+            Console.WriteLine($"\tEl porcentaje de jirafas con edad entre 0 y 1 es: {porcentajeEdad1}");
+            Console.WriteLine($"\tEl porcentaje de jirafas con edad entre 2 y 3 es: {porcentajeEdad2}");
+            Console.WriteLine($"\tEl porcentaje de jirafas con edad mayor a 3 es:{porcentajeEdad3}");
+                break;
+            case 3:
+            for (int i = 1; i <= 15; i++)
+            {
+                Console.WriteLine($"Ingrese la edad del chimpancé {i}");
+                edadAnimal = int.Parse(Console.ReadLine());
+
+                if (edadAnimal >0 && edadAnimal<2)
+                {
+                    edad1++;
+                }else if(edadAnimal>1 && edadAnimal<3){
+                    edad2++;
+                }
+                else if(edadAnimal>=3){
+                    edad3++;
+                }
+            }
+
+            porcentajeEdad1 = edad1/40.0*100;
+            porcentajeEdad2 = edad2/40.0*100;
+            porcentajeEdad3 = edad3/40.0*100;
+
+            Console.WriteLine($"\tEl porcentaje de chimpancés con edad entre 0 y 1 es: {porcentajeEdad1}");
+            Console.WriteLine($"\tEl porcentaje de chimpancés con edad entre 2 y 3 es: {porcentajeEdad2}");
+            Console.WriteLine($"\tEl porcentaje de chimpancés con edad mayor a 3 es:{porcentajeEdad3}");
+                break;
+            default:
+            Console.WriteLine($"No existe una opcion con {animalEstudiar}");
+                break;
+        }
+    }
+}
